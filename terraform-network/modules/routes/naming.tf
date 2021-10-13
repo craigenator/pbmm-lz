@@ -7,7 +7,7 @@
 */
 
 module "route_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/route"
+  source = "../../../terraform-gcp-goa-naming//modules/gcp/route"
 
   user_defined_string = var.route_name
 }

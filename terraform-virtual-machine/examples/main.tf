@@ -14,7 +14,7 @@ resource "random_string" "random_string" {
 }
 
 module "project" {
-  source                         = "git@github.com:GovAlta/terraform-gcp-project.git?ref=1.3.2"
+  source                         = "../terraform-gcp-project"
   billing_account                = var.billing_account
   department_code                = var.department_code
   user_defined_string            = var.user_defined_string
@@ -75,12 +75,6 @@ module "virtual_machine" {
       id                 = 0
       subnetwork         = google_compute_subnetwork.subnetwork.name
       subnetwork_project = module.project.project_id
-      // network_ip         = "10.10.20.2" # optional
-      // access_config = [                 # optional
-      //   {
-      //     nat_ip = "1.23.4.3"
-      //   }
-      // ]
     }
   ]
 

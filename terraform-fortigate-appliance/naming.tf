@@ -8,7 +8,7 @@
 
 module "vm_name" {
   for_each = local.instances
-  source   = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/virtual_machine"
+  source   = "../terraform-gcp-goa-naming//modules/gcp/virtual_machine"
 
   department_code     = var.department_code
   environment         = var.environment
@@ -19,7 +19,7 @@ module "vm_name" {
 }
 
 module "fortigate_service_account" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/service_account"
+  source = "../terraform-gcp-goa-naming//modules/gcp/service_account"
 
   department_code = var.department_code
   environment     = var.environment
@@ -30,7 +30,7 @@ module "fortigate_service_account" {
 
 module "virtual_machine_instance_group" {
   for_each = local.instances
-  source   = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/virtual_machine_instance_group"
+  source   = "../terraform-gcp-goa-naming//modules/gcp/virtual_machine_instance_group"
 
   department_code = var.department_code
   environment     = var.environment
@@ -42,7 +42,7 @@ module "virtual_machine_instance_group" {
 
 module "compute_address_internal_active_ip" {
   for_each = var.network_ports
-  source   = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/compute_address_internal_ip"
+  source   = "../terraform-gcp-goa-naming//modules/gcp/compute_address_internal_ip"
 
   department_code = var.department_code
   environment     = var.environment
@@ -52,7 +52,7 @@ module "compute_address_internal_active_ip" {
 }
 
 module "compute_address_public_active_ip" {
-  source   = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/compute_address_external_ip"
+  source   = "../terraform-gcp-goa-naming//modules/gcp/compute_address_external_ip"
 
   department_code = var.department_code
   environment     = var.environment
@@ -63,7 +63,7 @@ module "compute_address_public_active_ip" {
 
 module "compute_address_internal_passive_ip" {
   for_each = var.network_ports
-  source   = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/compute_address_internal_ip"
+  source   = "../terraform-gcp-goa-naming//modules/gcp/compute_address_internal_ip"
 
   department_code = var.department_code
   environment     = var.environment
@@ -73,7 +73,7 @@ module "compute_address_internal_passive_ip" {
 }
 
 module "compute_address_public_passive_ip" {
-  source   = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/compute_address_external_ip"
+  source   = "../terraform-gcp-goa-naming//modules/gcp/compute_address_external_ip"
 
   department_code = var.department_code
   environment     = var.environment

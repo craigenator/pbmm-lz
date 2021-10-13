@@ -7,7 +7,7 @@
 */
 
 module "router_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/router"
+  source = "../../../terraform-gcp-goa-naming//modules/gcp/router"
 
   department_code = var.department_code
   environment     = var.environment

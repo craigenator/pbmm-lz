@@ -10,7 +10,7 @@
    Project
   *****************************************/
 module "project" {
-  source                         = "git@github.com:GovAlta/terraform-gcp-project.git"
+  source                         = "../terraform-gcp-project"
   department_code                = var.department_code
   user_defined_string            = var.user_defined_string
   additional_user_defined_string = var.additional_user_defined_string

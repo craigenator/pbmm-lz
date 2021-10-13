@@ -14,7 +14,7 @@ resource "random_string" "random_string" {
 }
 
 module "project" {
-  source                         = "git@github.com:GovAlta/terraform-gcp-project.git"
+  source                         = "../../terraform-gcp-project"
   billing_account                = var.billing_account
   department_code                = var.department_code
   user_defined_string            = var.user_defined_string
@@ -69,7 +69,7 @@ module "iam" {
   ]
   project_iam = [
     {
-      member  = "group:unittest@c3.gov-ab.cloud-nuage.canada.ca"
+      member  = "group:name@name.canada.ca"
       project = module.project.project_id
       roles = [
         "roles/viewer",
@@ -77,7 +77,7 @@ module "iam" {
       ]
     },
     {
-      member = "group:security-reviewers@c3.gov-ab.cloud-nuage.canada.ca"
+      member = "group:name@name.canada.ca"
       roles = [
         "roles/viewer",
       ]
@@ -86,7 +86,7 @@ module "iam" {
   compute_network_users = [
     {
       members = [
-        "group:unittest@c3.gov-ab.cloud-nuage.canada.ca",
+        "group:name@name.canada.ca",
       ]
       subnetwork = google_compute_subnetwork.subnetwork.name
       region     = google_compute_subnetwork.subnetwork.region
@@ -94,7 +94,7 @@ module "iam" {
   ]
   folder_iam = [
     {
-      member = "group:unittest@c3.gov-ab.cloud-nuage.canada.ca"
+      member = "group:name@name.canada.ca"
       folder = google_folder.folder.name
       roles = [
         "roles/viewer",
@@ -107,7 +107,7 @@ module "organization_iam" {
   source = "../"
   organization_iam = [
     {
-      member       = "group:unittest@c3.gov-ab.cloud-nuage.canada.ca"
+      member       = "group:name@name.canada.ca"
       organization = var.organization
       roles = [
         "roles/viewer",

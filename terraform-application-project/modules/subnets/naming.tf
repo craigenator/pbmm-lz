@@ -7,7 +7,7 @@
 */
 
 module "subnet_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/subnet"
+  source = "../../../terraform-gcp-goa-naming//modules/gcp/subnet"
 
   department_code = var.department_code
   environment     = var.environment

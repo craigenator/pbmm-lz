@@ -10,7 +10,7 @@
    Project
   *****************************************/
 module "project" {
-  source                         = "git@github.com:GovAlta/terraform-gcp-project.git"
+  source                         = "../terraform-project"
   department_code                = var.department_code
   user_defined_string            = var.user_defined_string
   additional_user_defined_string = var.additional_user_defined_string
@@ -58,7 +58,7 @@ module "network" {
  *****************************************/
 module "firewall" {
   depends_on                              = [module.network]
-  source                                  = "git@github.com:GovAlta/terraform-gcp-firewall.git"  
+  source                                  = "../terraform-gcp-firewall"  
   project_id                              = module.project.project_id
   network                                 = module.network.appvpc.network_name
   custom_rules                            = var.custom_rules

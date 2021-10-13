@@ -11,7 +11,7 @@ resource "random_id" "project_suffix" {
 }
 
 module "project" {
-  source                         = "git@github.com/GovAlta/terraform-gcp-project.git"
+  source                         = "../../terraform-project"
   billing_account                = var.billing_account
   department_code                = var.department_code
   user_defined_string            = "TestDnsZone"

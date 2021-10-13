@@ -7,7 +7,7 @@
 */
 
 module "allow_admins_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/firewall_rule"
+  source = "../terraform-gcp-goa-naming//modules/gcp/firewall_rule"
 
   department_code = var.department_code
   environment     = var.environment
@@ -17,7 +17,7 @@ module "allow_admins_name" {
 }
 
 module "allow_internal_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/firewall_rule"
+  source = "../terraform-gcp-goa-naming//modules/gcp/firewall_rule"
 
   department_code = var.department_code
   environment     = var.environment
@@ -28,7 +28,7 @@ module "allow_internal_name" {
 
 module "allow_zone_internal_ingress_name" {
   for_each = toset(var.zone_list)
-  source   = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/firewall_rule"
+  source   = "../terraform-gcp-goa-naming//modules/gcp/firewall_rule"
 
   department_code = var.department_code
   environment     = var.environment
@@ -38,7 +38,7 @@ module "allow_zone_internal_ingress_name" {
 }
 
 module "deny_all_egress_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/firewall_rule"
+  source = "../terraform-gcp-goa-naming//modules/gcp/firewall_rule"
 
   department_code = var.department_code
   environment     = var.environment
@@ -48,7 +48,7 @@ module "deny_all_egress_name" {
 }
 
 module "bastion_rule_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/firewall_rule"
+  source = "../terraform-gcp-goa-naming//modules/gcp/firewall_rule"
 
   department_code = var.department_code
   environment     = var.environment
@@ -59,7 +59,7 @@ module "bastion_rule_name" {
 
 module "iap_rules_names" {
   for_each = var.custom_iap_rules
-  source   = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/firewall_rule"
+  source   = "../terraform-gcp-goa-naming//modules/gcp/firewall_rule"
 
   department_code = var.department_code
   environment     = var.environment
@@ -70,7 +70,7 @@ module "iap_rules_names" {
 
 module "custom_rules_names" {
   for_each = var.custom_rules
-  source   = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/firewall_rule"
+  source   = "../terraform-gcp-goa-naming//modules/gcp/firewall_rule"
 
   department_code = var.department_code
   environment     = var.environment

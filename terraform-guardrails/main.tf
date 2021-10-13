@@ -7,7 +7,7 @@
 */
 
 module "guardrails_project" {
-  source                         = "git@github.com:GovAlta/terraform-gcp-project.git"
+  source                         = "../terraform-gcp-project"
   billing_account                = var.billing_account
   department_code                = var.department_code
   user_defined_string            = var.user_defined_string

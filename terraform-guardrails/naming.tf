@@ -7,7 +7,7 @@
 */
 
 module "client_reports_bucket" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/storage"
+  source = "../terraform-gcp-goa-naming//modules/gcp/storage"
 
   department_code = var.department_code
   environment     = var.environment

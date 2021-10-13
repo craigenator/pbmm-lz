@@ -7,7 +7,7 @@
 */
 
 module "audit_streams_bucket_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/storage"
+  source = "../../../terraform-gcp-goa-naming//modules/gcp/storage"
 
   department_code = var.department_code
   environment     = var.environment
@@ -17,7 +17,7 @@ module "audit_streams_bucket_name" {
 }
 
 module "log_sink_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/log_sink"
+  source = "../../../terraform-gcp-goa-naming//modules/gcp/log_sink"
 
   department_code = var.department_code
   environment     = var.environment

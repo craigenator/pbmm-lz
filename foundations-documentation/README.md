@@ -2,87 +2,85 @@
 
 ## Overview
 The GCP Landing Zone is a set of Terraform modules with baked in opinions that
-is to be used as the standard way to setup a new GCP organization. Any
-department that will create a new GCP organization can utilize this repository
-and use its processes as an accelerator. It provides all the basic necessary
-pieces to take a new GCP organization from conception to being ready to onboard
-application infrastructure.
+can be used as the standard setup for a new GCP organization. Any
+department that creates a new GCP organization can utilize this repository
+and its processes to accelerate developement. This repository provides all the basic
+pieces required to take a GCP organization from conception to application infrastructure
+onboarding ready.
 
 The goal is to provide:
 1. GCP Bootstrap Project
-    - Provides a Service Account (SA) with appropriate permissions that is used
+    - Service Account (SA) with appropriate permissions that is used
       to deploy resources
-    - Storage buckets which are used to store Terraform state files
+    - Storage buckets which are used to store Terraform state (yaml) files
 1. GCP Folder Structure
-    - Create the base folder structure where projects will be deployed
+    - Basic GCP folder structure to hold projects deployed as part of other infrastructure
 1. Organization Policy Constraints
-    - Deploy organization policies which provide security controls across the
-      organization
-1. 30 Day Gurardrails
-    - Deploy a set of resources to monitor compliance to the 30-Day Guardrails
+    - Organization policies which provide security controls across the organization
+1. Gurardrails
+    - A set of resources to monitor compliance with the 30-Day Guardrails
       controls that can be monitored via code
 1. Policy Enforcement
     - TODO
 1. Log Bunkering
     - Log for audit and forensic purposes with Organization Log Sink
-    - Locked storage bucket where logs cannot be altered or deleted and retained
+    - Locked storage bucket where logs cannot be altered or deleted and are retained
       for a configurable amount of time
 1. Organization Level Custom Roles
-    - Custom Roles created at the Oranization level that can be applied on the project level
+    - Custom Roles created at the Oranization level that to be applied at the project level
 1. DNS
-    - Zone management for Organization Domain
+    - Zone management for Organization Domain 
     - Forwarders to project sub-zones
 1. Network
-    - Using the unique GCP host network model
-    - A Network host project is created which is used by many application
-      projects
-    - Ability to create multiple host networks for Production and Non-Production, both with
-      SCED and Non-SCED
-    - SCED networks to include the use of Fortigates
+    - Leverages the unique GCP host network model
+    - A Network host project to be used by other application projects
+    - Initial Production and Non-Production host network with support for additional networks
+    - A perimeter network for use by with Fortigate
 1. Firewall
-    - Each network created above will need a firewall attached
-    - Zone model is defined here
-    - Customized rules can also be implemented
+    - Rules for ingress/egress to each of the above networks
+    - Definition of the zone model
+    - Allows for customizable rules
 1. VPC Service Controls
-    - Provide security perimeter to restrict any un-recognized access request
+    - Forigate vm instances deployed into the perimeter network for traffic management
 1. Identity Aware Proxy
-    - Provide central IAM and secure tunnel to access resources within GCP
+    - Central IAM and secure tunnel to access resources within GCP
 1. Applications
    - GCP Project
    - Service Accounts
    - Policies
    - Apply IAM
    - Project level DNS zone
+   - Fortigate?
 
 *Supporting Modules*
 1. Naming
-   - resource names are passed through this module to use a standard naming convention
+   - A module used to standardize resource names
 
 
-Application projects are to deployed using this landing Zone. While the resources for
-applications are to be deployed using another process.
+Application projects are deployed using this landing Zone. Resources for
+applications must be deployed using another process.
 
 ## Tools
-The process to deploy the landing zone utilizes Terraform and Terragrunt.
+The landing zone deployment process utilizes Terraform and Terragrunt.
 Terraform is used to define and deploy the resources into GCP and Terragrunt is
-used to stitch the modules together.
+used for variable injection so that terraform modules can be reused for deployment 
+of the same kinds of resources.
 
-Using Terraform will work, but it does bring unnecessary operational overhead.
+Using Terraform alone would work, but brings unnecessary operational overhead, such as:
 - Repeated code
-    - Using one module of modules to create the dependency graph causes you to
-      define the same outputs and variables on multiple levels
+    - The module of modules approach forces the definition of the same outputs and variables 
+      on multiple levels
 - Unnecessary API Calls
     - The module of modules approach causes every resources to be checked on the
       cloud provider every time the module is run
-    - This can be avoided by using a manual process instead but this introduces a
-      much larger barrier to entry as the operator must know the process to
-      deploy the modules in the correct order
+    - The manual process approach requires the operator to know the correct order to 
+      to deploy the modules
     - Terraform remote states can be used to accomplish a similar result but is
       harder to track
 
-Terragrunt introduces a more streamlined approach to deploy the Terraform
-modules. It allows you to inherit configuration from other areas of the
-repository to follow the Don't Repeat Yourself (DRY) coding practice.
+Terragrunt streamlines the deployment of Terraform modules. It allows modules to inherit 
+configuration from other areas of the repository. This enables the fundamental 
+Don't Repeat Yourself (DRY) coding practice.
 
 Terragrunt replaces the top level module of modules with one or many
 `terragrunt.hcl` files. This file defines the location of the module to run, the
@@ -246,24 +244,31 @@ high level steps are:
 For detailed instructions see [Bootstrap.md](./Bootstrap.md)
 
 ## GCP Folder Structure
-The GCP folder structure has been simplified to only 3 folders; Production,
-Non-Production and Audit. All common and application projects will be deployed
-in the Production and Non-Production folders with the exception of the Audit
-Project that will be deployed in Audit Folder.
+To reduce operational complexity, GoA will implement the following structure:
+
+1.	Six top-level folders: Infrastructure, Sandbo¬¬x, Workloads, Automation, Shared Services, Audit & Security
+2.	Multiple projects, always provisioned together in the production and non-production (dev, uat, etc) folders under the top-level Workloads folder
+Note: The Audit folder and project is to persist log data outside of the nonproduction and production GCP projects¬¬
+
 
 The list of folder names to create in `organization-config.yaml`
 ```yaml
 folders:
-  parent: "folders/############"
-  names:
-    - "Production"
-    - "Non-Production"
-    - "Audit
+  parent: folders/102248106386
+  names: 
+    - Infrastructure
+    - Sandbox
+  subfolders_1:
+    SharedInfrastructure: Infrastructure
+    Networking: Infrastructure
+    Prod: Workloads
 ```
 
-![Structure](./artifacts/OrganizationFolderandProjectStructure.png)
 
-## Audit Log Bunker
+![image](https://user-images.githubusercontent.com/88559665/137198829-f237395d-b4d8-45f1-a6c4-5d7a3bdd7666.png)
+
+
+## **Audit Log Bunker**
 A log bunker project is created to hold a GCS bucket. This bucket has the
 ability to be locked. Once locked, content can be added but not modified or
 deleted. This module also has the ability to create Organization Log Sinks with
@@ -290,11 +295,11 @@ audit:
       bucket_viewer: "group:us@domain.com"
 ```
 
-## 30-Day Guradrails
-TODO
+## Guardrails
+A Guard Rails project creates the preliminary baseline set of controls within the cloud-based environments. 
+GCP guard rails are created using rego based policies in this project.
 
-## Policy Enforcement
-Forseti - TODO
+For e.g. Enabling uniform bucket level access on all GCS storage buckets.
 
 ## Organization Policy Constraints
 As part of the GCP landing zone, GCP organization policy constraints will be
@@ -345,13 +350,57 @@ orgPolicies:
 ```
 
 ## Log Bunkering
-TODO
+As part of the GCP Audit Project, a Log bunkering facility has been provisioned. This project has an Audit GCS bucket created 
+where in all the logs are stored and can be used for future reference. Lifecycle Policies have also been added to the Audit buckets.
+
+A logging sink has been configured which filters all the logs based on the filter criteria and stores in a destination GCS bucket. 
+Corresponding log writer and reader roles have been created as well which helps the principals with this role create and view the logs.
+
+Resources created as part of this project
+1. Audit Project
+2. Audit Sink (to filter and route the logs to destination)
+3. Destination GCS bucket
+4. Log writer role
+5. Log reader role
 
 ## Organization Custom Roles
-TODO
+As part of the terraform-gcp-org-custom-roles project, in addition to the default GCP roles, multiple GCP custom roles have been created 
+with varying sets of permissions assigned.
+These roles can be assigned to varying principals (Users, Groups or Service Accounts) at the Organization, Folder or Project level.
+The roles are assigned based on what privileges corresponding principals need  at that level.
+
+For e.g. Read Only Users should be able to **only view the resources and cannot edit** the resources in GCP. 
+Billing Administrator should be able to perform all operations at the Billing Project level.
+
+Custom roles created at the GOA organization level as part of this project are
+1. Application Developers
+2. Billing Administrators
+3. Billing Operations
+4. Billing ViewOnly
+5. Domain Administrator
+6. Network Administrators
+7. Platform Operators Non Production
+8. Platform Operators Production
+9. Read Only Users
+10. Security Operators
 
 ## DNS
-TODO
+
+ As part of the DNS design in GCP cloud, private DNS Zones are created in Non-Prod and PROD shared VPCs. These zones help in DNS resolution within the VPCs.
+ DNS Peering zones are created between Non-PROD and PROD shared VPCs for DNS resolution of recordsets between Both zones.
+ DNS Conditional Forwarding zones are created between PROD VPC in GCP and the on-prem network through the perimeter VPC for DNS resolution between GCP 
+ and on-prem networks.
+ 
+ Following steps were followed to create DNS design.
+ 1. Create Non-prod Private DNS Zone
+ 2. Create Prod Private DNS Zone
+ 3. Create Non-prod Peering DNS Zone existing in Prod VPC and peering to Non-PROD VPC
+ 4. Create a PROD Peering DNS Zone existing in Non-prod VPC and peering to PROD VPC
+ 5. Create a PROD DNS Forwarding zone to on-prem goagslb, NCC and JJB destination VIP servers.
+ 6. Create a GOAGSLB Peering DNS Zone existing in Non-prod VPC and peering to PROD VPC
+
+![image](https://user-images.githubusercontent.com/88559665/136870744-491f81aa-647b-4fc4-a7e1-d2e25afd57c9.png)
+
 
 ## Networking
 This module creates a GCP Host network project, VPC and subnets. Multiple
@@ -422,12 +471,6 @@ The module defines a set of base rules that deny all traffic at the lowest
 priority. If the traffic does not meet any other rules, both Ingress and Egress
 will be blocked.
 
-It also includes the rules that define the  Zones. The tags for each zone
-are:
-- public-access-zone
-- operations-zone
-- restricted-zone
-- management-restricted-zone
 
 The firewall is configured so that any traffic that does not meet a firewall
 rule is **not allowed**. A rule must exist in some form to allow the traffic.
@@ -439,26 +482,26 @@ allows for the definition of `customRules` to rules to for custom tags. Below is
 an example of creating a few custom rules.
 
 ```yaml
-nonpNonScedFirewall:
+nonpFirewall:
   customRules:
-    allow-backend-to-databases:
-      description: "Allow backend nodes connection to databases instances"
-      direction: INGRESS
+    allow-egress-internet:
+      description: Allow egress to the internet
+      direction: EGRESS
       action: allow
       ranges:
+        - 10.108.128.0/24
       use_service_accounts: false
       targets:
-      - databases # target_tags
+      - allow-egress-internet
       sources:
-      - backed    # source_tags
       rules:
-      - protocol: tcp
-        ports:
-        - 3306
-        - 5432
-        - 1521
-        - 1433
-      extra_attributes: {}
+        - protocol: all
+          ports: []
+      extra_attributes:
+        disabled: true
+        priority: 1001
+        flow_logs: true
+        flow_logs_metadata: EXCLUDE_ALL_METADATA
 
     # Example how to allow connection from an instance with a given service account
     allow-all-admin-sa:
@@ -481,8 +524,7 @@ nonpNonScedFirewall:
 ```
 
 ## VPC Service Controls
-The VPC Service Control module is applied in two parts. The primary configurations are applied as part of the `common` Terragrunt run. This part configures the shared resources that are top level `policy` and `access levels`. This has been separated from the secondary configurations to promote reusability of the `access levels` across many `perimeters`.
-
+The VPC Service Control module is applied at the organization level. The primary configurations are applied as part of the `common` Terragrunt run. This part configures the shared resources that are top level `policy` and `access levels`. 
 The primary configuration is read from the organization-config.yaml file
 
 ```yaml
@@ -499,49 +541,14 @@ acceontextManager:
     basic2:
       description: Simple Example Access Level
       name: best_access_level
-      members:
-      - "group:us@domain.com"
+      ip_subnetworks:
+        - 10.108.128.33/32
       regions: []
-```
-
-The secondary configurations can be applied in multiple parts, typically in direct relation to environments such as Production and Non-Production. This logic extends to the use of the SCED and Non-SCED network designs. This layer applies the primary configuration's `access levels` to the `parimeters` created in this step. Multiple `perimeters` can use the same `access levels`. When expanded, the secondary configurations are applied to in the following ways:
-
-1. Production SCED
-1. Production Non-SCED
-1. Non-Production SCED
-1. Non-Production Non-SCED
-
-Each of the above environments is configured in its own file which is read from the config folder.
-
-Example of the configuration file for Non-Production - Non-SCED
-```yaml
----
-nonpVpcSvcCtl:
-  regular_service_perimeter:
-    regular_service_perimeter_1:
-      perimeter_name: sample_regular_perimeter
-      description: "Some description"
-      resources_dry_run: []
-      access_levels_dry_run:
-        - sample_access_level
-      dry_run: true
-    regular_service_perimeter_2:
-      perimeter_name: awesome_regular_perimeter
-      description: "Some description 2"
-      resources_dry_run: []
-      access_levels_dry_run:
-        - best_access_level
-      dry_run: true
-  bridge_service_perimeter:
-    bridge_service_perimeter_1:
-      perimeter_name: sample_bridge_perimeter
-      description: Some description
-      resources: []
 ```
 
 ## Identity Aware Proxy
 Identity Aware Proxy replaces the use of Bastion Hosts. The configuration and
-use if IAP is built into the Project and Firewall Modules.
+use of IAP is built into the Project and Firewall Modules.
 
 The Project module provides a variable that can be populated with a list of
 users or groups to give the `roles/iap.tunnelResourceAccessor` role to. It is
@@ -559,6 +566,3 @@ Connections to these services are made with the console or gcloud SDK. See the
 [GCP
 documentation](https://cloud.google.com/iap/docs/using-tcp-forwarding#tunneling_ssh_connections)
 for details.
-
-## Application Projects
-TODO

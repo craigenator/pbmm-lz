@@ -7,7 +7,7 @@
 */
 
 module "network_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/virtual_private_cloud"
+  source = "../../../terraform-gcp-goa-naming//modules/gcp/virtual_private_cloud"
 
   department_code = var.department_code
   environment     = var.environment

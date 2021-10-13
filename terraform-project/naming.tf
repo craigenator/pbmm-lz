@@ -7,7 +7,7 @@
 */
 
 module "project_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/project"
+  source = "../terraform-gcp-goa-naming//modules/gcp/project"
 
   department_code                = var.department_code
   environment                    = var.environment

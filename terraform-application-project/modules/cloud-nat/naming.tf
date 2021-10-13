@@ -7,7 +7,7 @@
 */
 
 module "router_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/router"
+  source = "../../terraform-gcp-goa-naming//modules/gcp/router"
 
   department_code = var.department_code
   environment     = var.environment
@@ -17,7 +17,7 @@ module "router_name" {
 }
 
 module "nat_name" {
-  source = "git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/nat"
+  source = "../../../terraform-gcp-goa-naming//modules/gcp/nat"
 
   department_code = var.department_code
   environment     = var.environment
