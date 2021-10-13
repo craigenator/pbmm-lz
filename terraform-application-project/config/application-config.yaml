@@ -1,0 +1,100 @@
+application:
+  userDefinedString: testproj # must be globally unique
+  additionalUserDefinedString: "app"
+  billingAccount: 00E11A-0AB9A2-077BE7
+  parent: folders/814711396416  # Infrastructure/Networking/NonProdNetworking
+  terraformDeploymentAccount: tf-deploy-sa
+  bootstrapEmail: 'user:sushant.bose@sourcedgroup.com'
+  region: null
+  departmentCode: Ab
+  environment: D
+  location: northamerica-northeast1
+  owner: GoA
+  projectServices:
+  - "cloudbilling.googleapis.com"
+  - "serviceusage.googleapis.com"
+  - "cloudresourcemanager.googleapis.com"
+  - "iam.googleapis.com"
+  - "logging.googleapis.com"
+  - "accesscontextmanager.googleapis.com"
+  - "sourcerepo.googleapis.com"
+  - "appengine.googleapis.com"
+  tfstate_buckets:
+    common:
+      name: commontfstatessbose # must be globally unique
+      labels: {}
+      storage_class: "STANDARD"
+      force_destroy: true
+  labels:
+    creator: 'networkuser'
+    date_created: '2021-09-01'
+    date_modified: '2021-09-24'
+    title: 'nwlabel-test'
+    department: 'goa'
+    imt_sector: 'test'
+    environment: 'uat'
+    service_id: 'xxx'
+    application_name: 'nwtest'
+    business_contact: 'xxx'
+    technical_contact: 'xxx'
+    general_ledger_account: 'xxx'
+    cost_center: 'n2463'
+    internal_order: 'xxx'
+    sos_id: 'sosid'
+    stra_id: 'xxx'
+    security_classification: 'private'
+    criticality: 'medium'
+    hours_of_operation: 'xxxx'
+    project_code: 'n2333'
+  networks:
+    - network_name: appvpc
+      description: The Application VPC
+      routing_mode: GLOBAL
+      shared_vpc_host: false
+      auto_create_subnetworks: false
+      delete_default_internet_gateway_routes: true
+      peer_project: ""
+      peer_network: ""    
+      subnets:
+        - subnet_name: public-subnet
+          subnet_ip: 10.10.10.0/24
+          subnet_region: northamerica-northeast1
+          subnet_private_access: 'true'
+          subnet_flow_logs: 'true'
+          description: This subnet has a description
+          log_config:
+            aggregation_interval: INTERVAL_5_SEC
+            flow_sampling: 0.5
+          secondary_ranges: []
+        - subnet_name: fe-subnet
+          subnet_ip: 10.10.12.0/24
+          subnet_region: northamerica-northeast1
+          subnet_private_access: 'true'
+          subnet_flow_logs: 'true'
+          description: This subnet has a description
+          log_config:
+            aggregation_interval: INTERVAL_5_SEC
+            flow_sampling: 0.5
+          secondary_ranges: []
+        - subnet_name: app-subnet
+          subnet_ip: 10.10.14.0/24
+          subnet_region: northamerica-northeast1
+          subnet_private_access: 'true'
+          subnet_flow_logs: 'true'
+          description: This subnet has a description
+          log_config:
+            aggregation_interval: INTERVAL_5_SEC
+            flow_sampling: 0.5
+          secondary_ranges: []
+        - subnet_name: be-subnet
+          subnet_ip: 10.10.16.0/24
+          subnet_region: northamerica-northeast1
+          subnet_private_access: 'true'
+          subnet_flow_logs: 'true'
+          description: This subnet has a description
+          log_config:
+            aggregation_interval: INTERVAL_5_SEC
+            flow_sampling: 0.5
+          secondary_ranges: []
+      routes: []
+      routers: []

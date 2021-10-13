@@ -1,0 +1,50 @@
+<!doctype html>
+
+<script type="text/javascript" language="javascript">
+function clickEvent() 
+{
+	//update below URL with valid hostname or IP of the middle-tier application instance or load balancer
+	fetch('http://10.10.10.1/allcustomers?namestring=' + document.getElementById('cname').value,
+	{
+		method: 'POST'
+	})
+	.then(response => {
+		if (response.status !== 200) {
+			console.error("Error making the request")
+			return
+		}
+
+		response.json().then(data =>{
+			console.log(data);
+
+			window.data = data;
+			document.getElementById("searchresult").innerHTML = JSON.stringify(data.data)
+		})
+	})
+	.catch(err => console.error(err))
+}
+</script>
+
+<html dir="ltr" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Search Page</title>
+		<style>
+			.center {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+	</head>
+	<body>	
+		<h1>Search Page</h1>Hosted on GCP
+		<div class="center">
+			<label for="fname">Customer Name: </label><input type="text" id="cname" name="cname">
+			<button onclick="clickEvent();">LOOKUP</button><br>
+			<p>Enter customer's name [Firstname Lastname]</p>
+			<br><br>Result: <div id="searchresult"></div>
+		</div>
+	</body>
+</html>
