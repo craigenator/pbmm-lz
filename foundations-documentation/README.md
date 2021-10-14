@@ -155,8 +155,6 @@ Below is a current snapshot of the directory tree:
 ├── Makefile
 ├── README.md
 ├── config
-│   ├── README.md
-│   ├── bootstrap.hcl
 |   ├── core-iam.yaml
 |   ├── dnszone-nonp-peer.yaml
 |   ├── dnszone-nonp-private.yaml
@@ -237,8 +235,9 @@ Below is a current snapshot of the directory tree:
 │   └── scripts
 │       ├── bootstrap.sh
 │       └── desktop_setup.sh
-├── known_hosts.bitbucket
-├── known_hosts.github
+├── documentation
+│   ├── Bootstrap.md
+│   └── Developer.md
 └── modupdate.sh
 ```
 
