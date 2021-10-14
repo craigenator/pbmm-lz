@@ -32,9 +32,6 @@ There are a few design limitations that led to the current design.
     that created by this module but is maintained by the Fortigate SDN connector
     which is configured in the `terraform-fortios-configuration` module that
     is to be run after this one has completed.
-## TODO
-- Naming convention update
-- DNS for load balancers?
 
 ## GCP Firewall Requirements
 - IPProtocol: TCP

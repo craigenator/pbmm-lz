@@ -101,7 +101,7 @@ func checkOrgPolicyBoolean(project, constraint string) bool {
 	}
 
 	// Name of the resource the `Policy` is set on.
-	resource := "projects/" + project // TODO: Update placeholder value.
+	resource := "projects/" + project
 
 	rb := &cloudresourcemanager.GetOrgPolicyRequest{
 		Constraint: "constraints/" + constraint,

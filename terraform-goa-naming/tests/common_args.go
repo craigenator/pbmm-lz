@@ -11,7 +11,6 @@ package tests
 type commonArgsMapType map[string]map[string]string
 type commonArgsType map[string]string
 
-// TODO: Read from yaml file
 var commonArgsMap = commonArgsMapType{
 	"LzPe": commonArgsType{
 		"department_code": "Lz",

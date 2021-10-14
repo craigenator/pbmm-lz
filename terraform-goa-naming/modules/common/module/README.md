@@ -7,17 +7,6 @@ Templates:
 * `common_mod_extend.tf`
 * `common_optional_prefix`
 
-
-TODO: Create scripts to perform templating for new/existing resources.
-
-
-
-# Limitations
-
-
-# Known Issues
-
-
 # Usage
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

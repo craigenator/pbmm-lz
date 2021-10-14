@@ -1,7 +1,5 @@
 # Landing Zone Bootstrap Project
 
-TODO - add networking
-
 This modules is designed to work with the requirements for the GCP Landing Zone.
 
 This module provides:

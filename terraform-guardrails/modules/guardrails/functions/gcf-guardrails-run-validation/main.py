@@ -29,7 +29,7 @@ def validate(event, context):
     guardrails_report_bucket_name = os.environ.get('GUARDRAILS_REPORTS_GCS_BUCKET')
     guardrails_report_bucket_name_suffix = os.environ.get('GUARDRAILS_REPORTS_GCS_BUCKET_SUFFIX')
     guardrails_policies_container_name = os.environ.get('GUARDRAILS_POLICIES_CONTAINER_NAME')
-    guardrails_policies_container_tag = os.environ.get('GUARDRAILS_POLICIES_CONTAINER_TAG') # TODO implement tagging
+    guardrails_policies_container_tag = os.environ.get('GUARDRAILS_POLICIES_CONTAINER_TAG')
 
     folder = event['name'].split('/')[0]
     filename = event['name'].split('/')[1]
@@ -96,5 +96,3 @@ def validate(event, context):
 
     result = client.create_build(project_id=project_id, build=build)
     return result
-
-

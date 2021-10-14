@@ -9,7 +9,6 @@
 locals {
   service_account_cloud_services = "${google_project.project.number}@cloudservices.gserviceaccount.com"
   service_accounts_default = {
-    # TODO: Find a better place to store BQ service account
     bq      = "bq-${google_project.project.number}@bigquery-encryption.iam.gserviceaccount.com"
     compute = "${google_project.project.number}-compute@developer.gserviceaccount.com"
     gae     = "${google_project.project.project_id}@appspot.gserviceaccount.com"

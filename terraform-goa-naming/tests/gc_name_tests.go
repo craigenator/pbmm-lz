@@ -15,7 +15,6 @@ type nameTest map[string]map[string]string
 type arguments map[string]string
 type runTests map[string]string
 
-// TODO: Convert to YAML
 // NOTE: The 'key name' must match the 'directory name' under the './examples' folder
 // commonArgsMap found in common_args.go file.
 // Add test cases to this map for terratests

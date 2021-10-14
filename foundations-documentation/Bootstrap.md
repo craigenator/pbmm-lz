@@ -45,77 +45,72 @@ Update and run the code below
 ```bash
 export BASEDIR=/your/code/folder
 ```
-Clone `gcp-foundations-live-infra`
+Clone `foundations-live-infra`
 ```bash
 cd ${BASEDIR}
-git clone git@github.com:GovAlta/gcp-foundations-live-infra.git
-cd gcp-foundations-live-infra
+git clone ../foundations-live-infra
+cd foundations-live-infra
 ```
 Create a new repository to hold the code on Github.
 
 Either add a second upstream or remove the current origin and point to a new repository
 
 ```bash
-cd ${BASEDIR}/gcp-foundations-live-infra
-git remote add personal git@github.com:GovAlta/stephen-foundations-live-infra.git
+cd ${BASEDIR}/foundations-live-infra
+git remote add personal ../foundations-live-infra
 git push -u personal main
 ```
 **OR**
 ```bash
-cd ${BASEDIR}/gcp-foundations-live-infra
+cd ${BASEDIR}/foundations-live-infra
 git remote rm origin
-git remote add origin git@github.com:GovAlta/stephen-foundations-live-infra.git
+git remote add origin ../foundations-live-infra
 git push -u origin main
 ```
-Repeat for `gcp-core-infrastructure`
+Repeat for `..core-infrastructure`
 ```bash
 cd ${BASEDIR}
-git clone git@github.com:GovAlta/gcp-core-infrastructure.git
-cd gcp-core-infrastructure
+git clone ../..core-infrastructure
+cd ..core-infrastructure
 ```
 Create a new repository to hold the code on Github.
 
 Either add a second upstream or remove the current origin and point to a new repository
 ```bash
-cd ${BASEDIR}/gcp-core-infrastructure
-git remote add personal git@github.com:GovAlta/stephen-core-infrastructure.git
+cd ${BASEDIR}/..core-infrastructure
+git remote add personal ../core-infrastructure
 git push -u personal main
 ```
 **OR**
 ```bash
-cd ${BASEDIR}/gcp-core-infrastructure
+cd ${BASEDIR}/..core-infrastructure
 git remote rm origin
-git remote add origin git@github.com:GovAlta/stephen-core-infrastructure.git
+git remote add origin ../core-infrastructure
 git push -u origin main
 ```
 
-The repositories that need to be forked are:
-- main - https://bitbucket.org/sourcedgroup/gcp-foundations-live-infra
-- core-foundation - https://bitbucket.org/sourcedgroup/gcp-core-infrastructure
 
 ## Re-point the core-infrastructure submodule
 After forking the `core-foundations` git sub-module of the
-`gcp-foundations-live-infra` will need to be pointed to the newly forked
-`gcp-core-infrastructure` repository.
+`foundations-live-infra` will need to be pointed to the newly forked
+`..core-infrastructure` repository.
 
-Inside the `gcp-foudations-live-infra` repository edit the `.gitmodules` and
+Inside the `..foudations-live-infra` repository edit the `modules` and
 point the url of the `[core-foundations]` section to point to the repository you
 created for this purpose above
 
 ```bash
 [submodule "documentation"]
 	path = documentation
-	url = git@github.com:GovAlta/gcp-foundation-documentation.git
-	branch = main
 [submodule "core-infrastructure"]
 	path = core-infrastructure
 	url = <CHANGE ME>
 	branch = main
 ```
 
-Pull the submodules locally. From the root of your clone of `gcp-foundations-live-infra`:
+Pull the submodules locally. From the root of your clone of `foundations-live-infra`:
 ```bash
-cd ${BASEDIR}/gcp-foundations-live-infra
+cd ${BASEDIR}/foundations-live-infra
 make modupdate
 ```
 
@@ -128,17 +123,14 @@ configuration details and should be considered sensitive. The contents would
 give a would-be attacker a place to start a targeted attack. For this reason the
 config folder is handled outside the main repository.
 
-Sample files can be copied from the [templates
-repository](https://bitbucket.org/sourcedgroup/gcp-foundations-live-configs).
-
 Clone the sample repository and copy the files to the proper location in the
-`gcp-foundations-live-infra` repository.
+`foundations-live-infra` repository.
 
 ```bash
 cd ${BASEDIR}
-git clone git@github.com:GovAlta/gcp-foundations-live-configs.git
-mkdir gcp-foundations-live-infra/config/
-cp gcp-foundations-live-configs/* gcp-foundations-live-infra/config
+git clone ../foundations-live-configs
+mkdir foundations-live-infra/config/
+cp foundations-live-configs/* foundations-live-infra/config
 ```
 
 Edit the files in the `config` folder to suite the destination environment,
@@ -170,10 +162,10 @@ Repeat for all yaml files in this directory.
 
 ## Running the Bootstrap Script
 Run the bootstrap process. Form this point on all commands are run from your
-clone of the `gcp-foundations-live-infra` repository directory.
+clone of the `foundations-live-infra` repository directory.
 
 ```bash
-cd ${BASEDIR}/gcp-foundations-live-infra
+cd ${BASEDIR}/foundations-live-infra
 make bootstrap
 ```
 
@@ -200,7 +192,7 @@ The output of the `make bootstrap` command will contain a variable called
 
 Verify the bootstrap environment:
 ```bash
-cd ${BASEDIR}/gcp-foundations-live-infra
+cd ${BASEDIR}/foundations-live-infra
 export CONFIG_BUCKET=<bucket name>
 make apply-bootstrap
 ```
@@ -232,6 +224,6 @@ If using Github Actions:
 1. Create a secret called `YAML_CONFIG_BUCKET` with the value saved above.
 
 ## Push Code to Repository
-Push the code for your clone of `gcp-foundations-live-infra` upstream to a
+Push the code for your clone of `foundations-live-infra` upstream to a
 branch and create a PR. After the push upstream the Github Workflows will be
 detected and will run PR and merge to main.

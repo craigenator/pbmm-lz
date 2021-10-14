@@ -6,9 +6,6 @@
  * subject to your agreement with Google.
 */
 
-# TODO: currently only `project` is mandatory, need clarification for management group naming
-# before incorporating the other fields.
-
 variable "department_code" {
   type        = string
   description = "Two character department code. Format: Uppercase lowercase e.g. Sc."

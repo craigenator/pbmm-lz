@@ -39,6 +39,6 @@ locals {
   default_guardrails_service_account_name = module.guardrails_service_account_name.result
   guardrails_policies_container = {
     name = module.guardrails_policies_container_name.result
-    tag  = "latest" #TODO figure out tagging strategy
+    tag  = "latest"
   }
 }

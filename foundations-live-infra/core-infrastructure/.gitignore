@@ -1,0 +1,5 @@
+*.zip
+*.zip.*
+.terragrunt-cache
+terraform.tfvars
+.terraform*

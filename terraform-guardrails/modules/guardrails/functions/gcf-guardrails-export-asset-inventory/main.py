@@ -43,4 +43,4 @@ def scan(request):
     print("Successfully triggered asset report generation for:", success)
     print("Error List:", error_list)
 
-    return "OK!" #TODO Refactor/Implement response
+    return "OK!"
