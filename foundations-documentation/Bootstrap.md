@@ -45,53 +45,18 @@ Update and run the code below
 ```bash
 export BASEDIR=/your/code/folder
 ```
-Clone `gcp-foundations-live-infra`
-```bash
-cd ${BASEDIR}
-git clone git@github.com:GovAlta/gcp-foundations-live-infra.git
-cd gcp-foundations-live-infra
-```
-Create a new repository to hold the code on Github.
+Clone `gcp-foundations-live-infra` into that folcer and navigate into the 
+`gcp-foundations-live-infra` folder that is generated
 
-Either add a second upstream or remove the current origin and point to a new repository
+Create a new repository to hold the code for your desired git repository.
 
-```bash
-cd ${BASEDIR}/gcp-foundations-live-infra
-git remote add personal git@github.com:GovAlta/stephen-gcp-foundations-live-infra.git
-git push -u personal main
-```
-**OR**
-```bash
-cd ${BASEDIR}/gcp-foundations-live-infra
-git remote rm origin
-git remote add origin git@github.com:GovAlta/stephen-gcp-foundations-live-infra.git
-git push -u origin main
-```
-Repeat for `gcp-core-infrastructure`
-```bash
-cd ${BASEDIR}
-git clone git@github.com:GovAlta/gcp-core-infrastructure.git
-cd gcp-core-infrastructure
-```
-Create a new repository to hold the code on Github.
+Either add a second upstream or remove the current origin and point to a new repository.
 
-Either add a second upstream or remove the current origin and point to a new repository
-```bash
-cd ${BASEDIR}/gcp-core-infrastructure
-git remote add personal git@github.com:GovAlta/stephen-gcp-core-infrastructure.git
-git push -u personal main
-```
-**OR**
-```bash
-cd ${BASEDIR}/gcp-core-infrastructure
-git remote rm origin
-git remote add origin git@github.com:GovAlta/stephen-gcp-core-infrastructure.git
-git push -u origin main
-```
+Repeat this process for `gcp-core-infrastructure`
 
 The repositories that need to be forked are:
-- main - https://bitbucket.org/sourcedgroup/gcp-foundations-live-infra
-- core-foundation - https://bitbucket.org/sourcedgroup/gcp-core-infrastructure
+- main - gcp-foundations-live-infra
+- core-foundation -gcp-core-infrastructure
 
 ## Re-point the core-infrastructure submodule
 After forking the `core-foundations` git sub-module of the
@@ -105,11 +70,11 @@ created for this purpose above
 ```bash
 [submodule "documentation"]
 	path = documentation
-	url = git@github.com:GovAlta/gcp-foundation-documentation.git
+	url = <YourGitUrl>/gcp-foundation-documentation.git
 	branch = main
 [submodule "core-infrastructure"]
 	path = core-infrastructure
-	url = <CHANGE ME>
+	url =  <YourGitUrl>/gcp-core-infrastructure.git
 	branch = main
 ```
 
@@ -134,9 +99,12 @@ repository](https://bitbucket.org/sourcedgroup/gcp-foundations-live-configs).
 Clone the sample repository and copy the files to the proper location in the
 `gcp-foundations-live-infra` repository.
 
+Clone the gcp-foundations-live-configs repo into your BASEDIR.
+
+Make a folder to hold your configs and copy the contents of the
+gcp-foundations-live-configs folder into the new folder.
+
 ```bash
-cd ${BASEDIR}
-git clone git@github.com:GovAlta/gcp-foundations-live-configs.git
 mkdir gcp-foundations-live-infra/config/
 cp gcp-foundations-live-configs/* gcp-foundations-live-infra/config
 ```
