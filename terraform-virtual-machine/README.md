@@ -55,9 +55,9 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_boot_disk_name"></a> [boot\_disk\_name](#module\_boot\_disk\_name) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/managed_disk_os | 2.6.2 |
-| <a name="module_data_disk_name"></a> [data\_disk\_name](#module\_data\_disk\_name) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/managed_disk_data | 2.6.2 |
-| <a name="module_vm_name"></a> [vm\_name](#module\_vm\_name) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/virtual_machine | 2.6.2 |
+| <a name="module_boot_disk_name"></a> [boot\_disk\_name](#module\_boot\_disk\_name) | ../terraform-gcp-gc-naming//modules/gcp/managed_disk_os | 2.6.2 |
+| <a name="module_data_disk_name"></a> [data\_disk\_name](#module\_data\_disk\_name) | ../terraform-gcp-gc-naming//modules/gcp/managed_disk_data | 2.6.2 |
+| <a name="module_vm_name"></a> [vm\_name](#module\_vm\_name) | ../terraform-gcp-gc-naming//modules/gcp/virtual_machine | 2.6.2 |
 
 ## Resources
 

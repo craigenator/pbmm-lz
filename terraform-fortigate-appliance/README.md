@@ -56,9 +56,6 @@ There are a few design limitations that led to the current design.
   ports:
   - '8008'
 
-## Image
-https://www.googleapis.com/compute/v1/projects/fortigcp-project-001/global/images/fortinet-fgtondemand-700-20210407-001-w-license
-
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
@@ -78,16 +75,16 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_compute_address_internal_active_ip"></a> [compute\_address\_internal\_active\_ip](#module\_compute\_address\_internal\_active\_ip) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/compute_address_internal_ip | 2.14.3 |
-| <a name="module_compute_address_internal_mirror_port"></a> [compute\_address\_internal\_mirror\_port](#module\_compute\_address\_internal\_mirror\_port) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/compute_address_internal_ip | 2.14.3 |
-| <a name="module_compute_address_internal_passive_ip"></a> [compute\_address\_internal\_passive\_ip](#module\_compute\_address\_internal\_passive\_ip) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/compute_address_internal_ip | 2.14.3 |
-| <a name="module_fortigate_service_account"></a> [fortigate\_service\_account](#module\_fortigate\_service\_account) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/service_account | 2.14.3 |
-| <a name="module_instances"></a> [instances](#module\_instances) | git@github.com:GovAlta/terraform-gcp-virtual-machine.git | 1.1.0 |
-| <a name="module_mirror_backend_service"></a> [mirror\_backend\_service](#module\_mirror\_backend\_service) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/region_backend_service | 2.14.3 |
-| <a name="module_mirror_forwarding_rule"></a> [mirror\_forwarding\_rule](#module\_mirror\_forwarding\_rule) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/forwarding_rule | 2.14.3 |
-| <a name="module_probe_response_health_check"></a> [probe\_response\_health\_check](#module\_probe\_response\_health\_check) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/health_check | 2.14.3 |
-| <a name="module_virtual_machine_instance_group"></a> [virtual\_machine\_instance\_group](#module\_virtual\_machine\_instance\_group) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/virtual_machine_instance_group | 2.14.3 |
-| <a name="module_vm_name"></a> [vm\_name](#module\_vm\_name) | git@github.com:GovAlta/terraform-gcp-gc-naming.git//modules/gcp/virtual_machine | 2.6.2 |
+| <a name="module_compute_address_internal_active_ip"></a> [compute\_address\_internal\_active\_ip](#module\_compute\_address\_internal\_active\_ip) | ../terraform-gcp-gc-naming//modules/gcp/compute_address_internal_ip | 2.14.3 |
+| <a name="module_compute_address_internal_mirror_port"></a> [compute\_address\_internal\_mirror\_port](#module\_compute\_address\_internal\_mirror\_port) | ../terraform-gcp-gc-naming//modules/gcp/compute_address_internal_ip | 2.14.3 |
+| <a name="module_compute_address_internal_passive_ip"></a> [compute\_address\_internal\_passive\_ip](#module\_compute\_address\_internal\_passive\_ip) | ../terraform-gcp-gc-naming//modules/gcp/compute_address_internal_ip | 2.14.3 |
+| <a name="module_fortigate_service_account"></a> [fortigate\_service\_account](#module\_fortigate\_service\_account) | ../terraform-gcp-gc-naming//modules/gcp/service_account | 2.14.3 |
+| <a name="module_instances"></a> [instances](#module\_instances) | ../terraform-gcp-virtual-machine | 1.1.0 |
+| <a name="module_mirror_backend_service"></a> [mirror\_backend\_service](#module\_mirror\_backend\_service) | ../terraform-gcp-gc-naming//modules/gcp/region_backend_service | 2.14.3 |
+| <a name="module_mirror_forwarding_rule"></a> [mirror\_forwarding\_rule](#module\_mirror\_forwarding\_rule) | ../terraform-gcp-gc-naming//modules/gcp/forwarding_rule | 2.14.3 |
+| <a name="module_probe_response_health_check"></a> [probe\_response\_health\_check](#module\_probe\_response\_health\_check) | ../terraform-gcp-gc-naming//modules/gcp/health_check | 2.14.3 |
+| <a name="module_virtual_machine_instance_group"></a> [virtual\_machine\_instance\_group](#module\_virtual\_machine\_instance\_group) | ../terraform-gcp-gc-naming//modules/gcp/virtual_machine_instance_group | 2.14.3 |
+| <a name="module_vm_name"></a> [vm\_name](#module\_vm\_name) | ../terraform-gcp-gc-naming//modules/gcp/virtual_machine | 2.6.2 |
 
 ## Resources
 

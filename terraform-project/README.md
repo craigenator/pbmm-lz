@@ -1,9 +1,8 @@
 # Project Module
-This modules is designed to work with the requirements for the [GCP Landing
-Zone](https://github.com/GovAlta/gcp-foundations-live-infra) and is to
-be used as the standard way to deploy a new GCP Project. It is currently
-utilized in the Network and Bootstrap modules, and in the future it will be
-utilized to deploy application projects.
+This modules is designed to work with the requirements for the GCP Landing
+Zone and is to be used as the standard way to deploy a new GCP Project.
+It is currently utilized in the Network and Bootstrap modules, and in 
+the future it will be utilized to deploy application projects.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs

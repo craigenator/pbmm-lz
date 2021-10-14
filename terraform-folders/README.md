@@ -17,7 +17,7 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_folder_names"></a> [folder\_names](#module\_folder\_names) | git@github.com:GovAlta/terraform-gcp-goa-naming.git//modules/gcp/folder | 1.0.0 |
+| <a name="module_folder_names"></a> [folder\_names](#module\_folder\_names) | ../terraform-gcp-goa-naming//modules/gcp/folder | 1.0.0 |
 
 ## Resources
 

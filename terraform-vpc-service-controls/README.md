@@ -1,6 +1,5 @@
 # GCP VPC Service Controls Module
-This modules is designed to work with the requirements for the [GCP Landing
-Zone](https://github.com/GovAlta/gcp-foundations-live-infra). 
+This modules is designed to work with the requirements for the GCP Landing Zone. 
 
 To get a more thorough understanding of how to use this module review the GCP
 documentation for  [Access Context

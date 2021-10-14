@@ -1,0 +1,55 @@
+orgId: "###########"
+defaultRegion: "northamerica-northeast1"
+
+bootstrap:
+  projectName: "globally-unique-bootstrap"
+  billingAccount: "XXXXXX-XXXXXX-XXXXXX"
+  parent: "folders/#########" # or "organizations/#########"
+  terraformDeploymentAccount: "tf-deploy-sa"
+  bootstrapEmail: "group:us@domain.com"
+  region: "northamerica-northeast1"
+  tfstate_buckets:
+    common:
+      name: globally-unique-common-tfstate-bkt
+      labels:
+    nonp:
+      name: globally-unique-prod-tfstate-bkt
+      labels:
+    prod:
+      name: globally-unique-nonp-tfstate-bkt
+      labels:
+
+orgPolicies:
+  directoryCustomerId: []
+  policy_boolean: {}
+  #   constraints/compute.skipDefaultNetworkCreation: false
+  policy_list: {}
+    # constraints/compute.trustedImageProjects:
+    #   inherit_from_parent: 
+    #   suggested_value:
+    #   status: true
+    #   values:
+    #   - projects/my-project
+
+folders:
+  parent: "folders/############"
+  names: 
+    - "Production"
+    - "Non-Production"
+    - "Audit"
+
+audit:
+  project_name: globally-unique-audit-bunker
+  billing_account: "XXXXXX-XXXXXX-XXXXXX"
+  audit_streams:
+    prod:
+      bucket_name: globally-unique-audit-bunker-bucket
+      is_locked: false
+      bucket_force_destroy: true       # for testing purposes only
+      bucket_storage_class: STANDARD # STANDARD, MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE
+      labels:
+      sink_name: globally-unique-audit-bunker-org-sink
+      description: Org Sink
+      filter: "severity >= WARNING" # or no filter
+      retention_period:  604800
+      bucket_viewer: "group:us@domain.com"

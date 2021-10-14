@@ -2,8 +2,7 @@
 
 TODO - add networking
 
-This modules is designed to work with the requirements for the [GCP Landing
-Zone](https://github.com/GovAlta/gcp-foundations-live-infra).
+This modules is designed to work with the requirements for the GCP Landing Zone.
 
 This module provides:
 - Application Project
@@ -25,8 +24,8 @@ No requirements.
 
 | Name | Source |
 |------|--------|
-| <a name="module_project"></a> [project](#module\_project) | git@github.com:GovAlta/terraform-gcp-project.git |
-| <a name="module_resource_policy_names"></a> [resource\_policy\_names](#module\_resource\_policy\_names) | git@github.com:GovAlta/terraform-gcp-firewall.git |
+| <a name="module_project"></a> [project](#module\_project) | ../terraform-gcp-project |
+| <a name="module_resource_policy_names"></a> [resource\_policy\_names](#module\_resource\_policy\_names) | ../terraform-gcp-firewall |
 
 ## Outputs
 

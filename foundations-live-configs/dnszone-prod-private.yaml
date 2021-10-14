@@ -1,0 +1,15 @@
+prodDNS:
+  domain: prd.gcp.gov.ab.ca.
+  name: prdprivate
+  private_visibility_config_networks: 
+    - projects/gcde-sc-prdnet-hostproject/global/networks/gcdecnr-prodvpc-vpc #For privately visible zones, the set of Virtual Private Cloud resources that the zone is visible from. Specify here the address of the network that should be allowed to access the dns [peering,private]
+  target_name_server_addresses: 
+    #- ipv4_address: 35.215.12.56
+    #  forwarding_path: private #List of target name servers for forwarding zone
+  target_network: "" #Peering network formatted like: projects/{project}/global/networks/{network}, Used with peering network type only
+  description: "Prod Private DNS Zone" #Description of Managed Zone
+  type: private #[public, private, forwarding or peering]
+  #default_key_specs_key: {}
+  #default_key_specs_zone: {}
+  #force_destroy: false
+  #recordsets: []

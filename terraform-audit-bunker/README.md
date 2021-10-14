@@ -1,7 +1,6 @@
 # Audit Log Bunker
-This modules is designed to work with the requirements for the [GCP Landing
-Zone](https://github.com/GovAlta/gcp-foundations-live-infra) and is
-used to satisfy the 30-Day Guardrail requirement for storing unaltered logs.
+This modules is designed to work with the requirements for the GCP Landing
+Zone and is used to satisfy the 30-Day Guardrail requirement for storing unaltered logs.
 
 This module creates an audit project with one or many Organization Log Sinks,
 and Buckets which can be filtered to store specific logs.
@@ -21,7 +20,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_audit"></a> [audit](#module\_audit) | ./modules/audit | n/a |
-| <a name="module_audit_project"></a> [audit\_project](#module\_audit\_project) | git@github.com/GovAlta/terraform-gcp-project.git | 1.3.2 |
+| <a name="module_audit_project"></a> [audit\_project](#module\_audit\_project) | ../terraform-gcp-project | 1.3.2 |
 
 ## Resources
 
