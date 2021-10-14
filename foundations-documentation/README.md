@@ -35,22 +35,22 @@ The goal is to provide:
     - Leverages the unique GCP host network model
     - A Network host project to be used by other application projects
     - Initial Production and Non-Production host network with support for additional networks
-    - A perimeter network for use by with Fortigate
+1. Perimeter Network and Foritgate Firewall
+    - A Perimeter network for access to the internet with Fortigate VMs to manage traffic
 1. Firewall
     - Rules for ingress/egress to each of the above networks
     - Definition of the zone model
     - Allows for customizable rules
-1. VPC Service Controls
-    - Forigate vm instances deployed into the perimeter network for traffic management
-1. Identity Aware Proxy
+4. VPC Service Controls
+    - Service Controls to configure allowed and disallowed access
+5. Identity Aware Proxy
     - Central IAM and secure tunnel to access resources within GCP
-1. Applications
+6. Applications
    - GCP Project
    - Service Accounts
    - Policies
    - Apply IAM
    - Project level DNS zone
-   - Fortigate?
 
 *Supporting Modules*
 1. Naming
@@ -102,7 +102,7 @@ backend state files. A typical `terragrunt.hcl` file may look like this.
     }
 
     terraform {
-        source = "git@github.com:GovAlta/terraform-firewall.git"
+        source = "git@github.com:GovAlta/terraform-gcp-firewall.git"
     }
 
     inputs = {
@@ -364,7 +364,7 @@ Resources created as part of this project
 5. Log reader role
 
 ## Organization Custom Roles
-As part of the terraform-org-custom-roles project, in addition to the default GCP roles, multiple GCP custom roles have been created 
+As part of the terraform-gcp-org-custom-roles project, in addition to the default GCP roles, multiple GCP custom roles have been created 
 with varying sets of permissions assigned.
 These roles can be assigned to varying principals (Users, Groups or Service Accounts) at the Organization, Folder or Project level.
 The roles are assigned based on what privileges corresponding principals need  at that level.
@@ -458,6 +458,26 @@ nonpNonScedHostNet:
   nat_name: "nat-gateway"
   router: "nat-router" #TODO - update var name
 ```
+
+## Perimeter Network and Fortigate Firewall
+This section assumes the use of a High Availability (HA) Fortigate to manage incoming and outgoing traffic. 
+An HA Fortigate requires the use of two vms with access to 4 VPCs:
+1. Public
+    - To manage traffic coming from the internet
+    - Houses a Cloud VPN and Cloud router to be connected to an onprem vpn to route traffic from onprem 
+1. Private
+    - To manage traffic coming from the Prod/NonP environments
+1. High Availabilty (HA)
+    - A requirement of Fortigate in order for HA to be enabled
+1. Management (Mgmt)
+    - For management of the Fortigate
+    - For Fortigate to run it's own healthchecks
+
+Each of Fortigate VMs are configured to have a nic in each of the above vpcs. The Public and Mgmt vpcs are 
+peered togther in order for the Fortigate healthchecks to reach the internet. The Private VPC is peered, with 
+routes exported, to the Prod/NonP network so that Prod/NonP has a route to the internet. The Route to the 
+internet forces a hop through the fortigate so that the fortigate can manage all traffic.
+
 
 ## Firewalls and Zones
 The firewall module complements the network module by providing the firewall

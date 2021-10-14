@@ -16,7 +16,7 @@ To update the version Terraform module that is being referenced in once of the
 1. Update the main repository `terragrunt.hcl` in the appropriate location to
    point to the new tag, example below
     ```
-    source = "git@github.com:GovAlta/terraform-folders.git"
+    source = "git@github.com:GovAlta/terraform-gcp-folders.git"
     ```
 1. Clone or update the local version of the `core-infrastructure` sub-module
    with `git clone` or `git pull`
