@@ -7,7 +7,7 @@
 */
 
 module "audit_project" {
-  source                         = "../terraform-gcp-project"
+  source                         = "../terraform-project"
   billing_account                = var.billing_account
   department_code                = var.department_code
   user_defined_string            = var.user_defined_string

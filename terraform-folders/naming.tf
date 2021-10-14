@@ -8,7 +8,7 @@
 
 module "folder_names" {
   for_each = toset(local.parent_folders)
-  source   = "../terraform-gcp-goa-naming//modules/gcp/folder"
+  source   = "../terraform-goa-naming//modules/gcp/folder"
 
   owner   = var.owner
   project = each.key
@@ -16,7 +16,7 @@ module "folder_names" {
 
 module "one_level_folder_names" {
   for_each = toset(local.subfolders_first_level)
-  source   = "../terraform-gcp-goa-naming//modules/gcp/folder"
+  source   = "../terraform-goa-naming//modules/gcp/folder"
 
   owner   = var.owner
   project = each.key
@@ -24,7 +24,7 @@ module "one_level_folder_names" {
 
 module "two_levels_folder_names" {
   for_each = toset(local.subfolders_second_level)
-  source   = "../terraform-gcp-goa-naming//modules/gcp/folder"
+  source   = "../terraform-goa-naming//modules/gcp/folder"
 
   owner   = var.owner
   project = each.key

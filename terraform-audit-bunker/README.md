@@ -20,7 +20,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_audit"></a> [audit](#module\_audit) | ./modules/audit | n/a |
-| <a name="module_audit_project"></a> [audit\_project](#module\_audit\_project) | ../terraform-gcp-project | 1.3.2 |
+| <a name="module_audit_project"></a> [audit\_project](#module\_audit\_project) | ../terraform-project | 1.3.2 |
 
 ## Resources
 

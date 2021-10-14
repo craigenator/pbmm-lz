@@ -7,7 +7,7 @@
 */
 
 module "client_reports_bucket" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/storage"
+  source = "../terraform-goa-naming//modules/gcp/storage"
 
   department_code = var.department_code
   environment     = var.environment

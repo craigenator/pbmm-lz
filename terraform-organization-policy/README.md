@@ -1,4 +1,4 @@
-# terraform-gcp-organization-policy
+# terraform-organization-policy
 
 As part of the GCP landing zone, GCP organization policy constraints will be
 utilized as a preventative guardrail to protect the platform.

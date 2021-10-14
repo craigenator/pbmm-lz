@@ -30,7 +30,7 @@ There are a few design limitations that led to the current design.
 
   - The Internal network (port3) is used as the `next hop` address in a route
     that created by this module but is maintained by the Fortigate SDN connector
-    which is configured in the `terraform-gcp-fortios-configuration` module that
+    which is configured in the `terraform-fortios-configuration` module that
     is to be run after this one has completed.
 ## TODO
 - Naming convention update
@@ -75,16 +75,16 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_compute_address_internal_active_ip"></a> [compute\_address\_internal\_active\_ip](#module\_compute\_address\_internal\_active\_ip) | ../terraform-gcp-gc-naming//modules/gcp/compute_address_internal_ip | 2.14.3 |
-| <a name="module_compute_address_internal_mirror_port"></a> [compute\_address\_internal\_mirror\_port](#module\_compute\_address\_internal\_mirror\_port) | ../terraform-gcp-gc-naming//modules/gcp/compute_address_internal_ip | 2.14.3 |
-| <a name="module_compute_address_internal_passive_ip"></a> [compute\_address\_internal\_passive\_ip](#module\_compute\_address\_internal\_passive\_ip) | ../terraform-gcp-gc-naming//modules/gcp/compute_address_internal_ip | 2.14.3 |
-| <a name="module_fortigate_service_account"></a> [fortigate\_service\_account](#module\_fortigate\_service\_account) | ../terraform-gcp-gc-naming//modules/gcp/service_account | 2.14.3 |
-| <a name="module_instances"></a> [instances](#module\_instances) | ../terraform-gcp-virtual-machine | 1.1.0 |
-| <a name="module_mirror_backend_service"></a> [mirror\_backend\_service](#module\_mirror\_backend\_service) | ../terraform-gcp-gc-naming//modules/gcp/region_backend_service | 2.14.3 |
-| <a name="module_mirror_forwarding_rule"></a> [mirror\_forwarding\_rule](#module\_mirror\_forwarding\_rule) | ../terraform-gcp-gc-naming//modules/gcp/forwarding_rule | 2.14.3 |
-| <a name="module_probe_response_health_check"></a> [probe\_response\_health\_check](#module\_probe\_response\_health\_check) | ../terraform-gcp-gc-naming//modules/gcp/health_check | 2.14.3 |
-| <a name="module_virtual_machine_instance_group"></a> [virtual\_machine\_instance\_group](#module\_virtual\_machine\_instance\_group) | ../terraform-gcp-gc-naming//modules/gcp/virtual_machine_instance_group | 2.14.3 |
-| <a name="module_vm_name"></a> [vm\_name](#module\_vm\_name) | ../terraform-gcp-gc-naming//modules/gcp/virtual_machine | 2.6.2 |
+| <a name="module_compute_address_internal_active_ip"></a> [compute\_address\_internal\_active\_ip](#module\_compute\_address\_internal\_active\_ip) | ../terraform-gc-naming//modules/gcp/compute_address_internal_ip | 2.14.3 |
+| <a name="module_compute_address_internal_mirror_port"></a> [compute\_address\_internal\_mirror\_port](#module\_compute\_address\_internal\_mirror\_port) | ../terraform-gc-naming//modules/gcp/compute_address_internal_ip | 2.14.3 |
+| <a name="module_compute_address_internal_passive_ip"></a> [compute\_address\_internal\_passive\_ip](#module\_compute\_address\_internal\_passive\_ip) | ../terraform-gc-naming//modules/gcp/compute_address_internal_ip | 2.14.3 |
+| <a name="module_fortigate_service_account"></a> [fortigate\_service\_account](#module\_fortigate\_service\_account) | ../terraform-gc-naming//modules/gcp/service_account | 2.14.3 |
+| <a name="module_instances"></a> [instances](#module\_instances) | ../terraform-virtual-machine | 1.1.0 |
+| <a name="module_mirror_backend_service"></a> [mirror\_backend\_service](#module\_mirror\_backend\_service) | ../terraform-gc-naming//modules/gcp/region_backend_service | 2.14.3 |
+| <a name="module_mirror_forwarding_rule"></a> [mirror\_forwarding\_rule](#module\_mirror\_forwarding\_rule) | ../terraform-gc-naming//modules/gcp/forwarding_rule | 2.14.3 |
+| <a name="module_probe_response_health_check"></a> [probe\_response\_health\_check](#module\_probe\_response\_health\_check) | ../terraform-gc-naming//modules/gcp/health_check | 2.14.3 |
+| <a name="module_virtual_machine_instance_group"></a> [virtual\_machine\_instance\_group](#module\_virtual\_machine\_instance\_group) | ../terraform-gc-naming//modules/gcp/virtual_machine_instance_group | 2.14.3 |
+| <a name="module_vm_name"></a> [vm\_name](#module\_vm\_name) | ../terraform-gc-naming//modules/gcp/virtual_machine | 2.6.2 |
 
 ## Resources
 

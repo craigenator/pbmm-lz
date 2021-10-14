@@ -7,7 +7,7 @@
 */
 
 module "export_asset_inventory_cf" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/cloud_function"
+  source = "../../terraform-goa-naming//modules/gcp/cloud_function"
 
   department_code = var.department_code
   environment     = var.environment
@@ -17,7 +17,7 @@ module "export_asset_inventory_cf" {
 }
 
 module "run_validation_cf" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/cloud_function"
+  source = "../../terraform-goa-naming//modules/gcp/cloud_function"
 
   department_code = var.department_code
   environment     = var.environment
@@ -27,7 +27,7 @@ module "run_validation_cf" {
 }
 
 module "guardrails_gcf_archives_bucket" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/storage"
+  source = "../../terraform-goa-naming//modules/gcp/storage"
 
   department_code = var.department_code
   environment     = var.environment
@@ -37,7 +37,7 @@ module "guardrails_gcf_archives_bucket" {
 }
 
 module "guardrails_assets_bucket" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/storage"
+  source = "../../terraform-goa-naming//modules/gcp/storage"
 
   department_code = var.department_code
   environment     = var.environment
@@ -47,7 +47,7 @@ module "guardrails_assets_bucket" {
 }
 
 module "guardrails_reports_bucket" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/storage"
+  source = "../../terraform-goa-naming//modules/gcp/storage"
 
   department_code = var.department_code
   environment     = var.environment
@@ -57,7 +57,7 @@ module "guardrails_reports_bucket" {
 }
 
 module "guardrails_container_build_pipeline_name" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/cloudbuild_trigger"
+  source = "../../terraform-goa-naming//modules/gcp/cloudbuild_trigger"
 
   department_code = var.department_code
   environment     = var.environment
@@ -67,7 +67,7 @@ module "guardrails_container_build_pipeline_name" {
 }
 
 module "guardrails_scheduler_name" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/cloud_scheduler_job"
+  source = "../../terraform-goa-naming//modules/gcp/cloud_scheduler_job"
 
   department_code = var.department_code
   environment     = var.environment
@@ -77,7 +77,7 @@ module "guardrails_scheduler_name" {
 }
 
 module "guardrails_service_account_name" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/service_account"
+  source = "../../terraform-goa-naming//modules/gcp/service_account"
 
   department_code = var.department_code
   environment     = var.environment
@@ -87,7 +87,7 @@ module "guardrails_service_account_name" {
 }
 
 module "guardrails_source_repo_name" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/generic_resource_name"
+  source = "../../terraform-goa-naming//modules/gcp/generic_resource_name"
 
   department_code = var.department_code
   environment     = var.environment
@@ -99,7 +99,7 @@ module "guardrails_source_repo_name" {
 }
 
 module "guardrails_artifact_registry_name" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/generic_resource_name"
+  source = "../../terraform-goa-naming//modules/gcp/generic_resource_name"
 
   department_code = var.department_code
   environment     = var.environment
@@ -111,7 +111,7 @@ module "guardrails_artifact_registry_name" {
 }
 
 module "guardrails_policies_container_name" {
-  source = "../../terraform-gcp-goa-naming//modules/gcp/container_registry_image"
+  source = "../../terraform-goa-naming//modules/gcp/container_registry_image"
 
   department_code = var.department_code
   environment     = var.environment

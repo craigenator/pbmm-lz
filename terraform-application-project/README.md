@@ -24,8 +24,8 @@ No requirements.
 
 | Name | Source |
 |------|--------|
-| <a name="module_project"></a> [project](#module\_project) | ../terraform-gcp-project |
-| <a name="module_resource_policy_names"></a> [resource\_policy\_names](#module\_resource\_policy\_names) | ../terraform-gcp-firewall |
+| <a name="module_project"></a> [project](#module\_project) | ../terraform-project |
+| <a name="module_resource_policy_names"></a> [resource\_policy\_names](#module\_resource\_policy\_names) | ../terraform-firewall |
 
 ## Outputs
 

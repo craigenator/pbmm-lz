@@ -7,7 +7,7 @@
 */
 
 module "audit_streams_bucket_name" {
-  source = "../../../terraform-gcp-goa-naming//modules/gcp/storage"
+  source = "../../../terraform-goa-naming//modules/gcp/storage"
 
   department_code = var.department_code
   environment     = var.environment
@@ -17,7 +17,7 @@ module "audit_streams_bucket_name" {
 }
 
 module "log_sink_name" {
-  source = "../../../terraform-gcp-goa-naming//modules/gcp/log_sink"
+  source = "../../../terraform-goa-naming//modules/gcp/log_sink"
 
   department_code = var.department_code
   environment     = var.environment

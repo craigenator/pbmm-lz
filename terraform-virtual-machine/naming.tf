@@ -7,7 +7,7 @@
 */
 
 module "vm_name" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/virtual_machine"
+  source = "../terraform-goa-naming//modules/gcp/virtual_machine"
 
   department_code     = var.department_code
   environment         = var.environment
@@ -18,14 +18,14 @@ module "vm_name" {
 }
 
 module "boot_disk_name" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/managed_disk_os"
+  source = "../terraform-goa-naming//modules/gcp/managed_disk_os"
 
   parent_resource = module.vm_name.result
 }
 
 module "data_disk_name" {
   for_each = { for disk in var.disks : disk.id => disk }
-  source   = "../terraform-gcp-goa-naming//modules/gcp/managed_disk_data"
+  source   = "../terraform-goa-naming//modules/gcp/managed_disk_data"
 
   parent_resource = module.vm_name.result
   number_suffix   = each.value.id

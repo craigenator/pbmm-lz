@@ -7,7 +7,7 @@
 */
 
 module "network_name" {
-  source = "../../../terraform-gcp-goa-naming//modules/gcp/virtual_private_cloud"
+  source = "../../../terraform-goa-naming//modules/gcp/virtual_private_cloud"
 
   department_code = var.department_code
   environment     = var.environment

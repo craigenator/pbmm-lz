@@ -105,7 +105,7 @@ resource "google_project_iam_member" "fortigate_project" {
 
 module "instances" {
   for_each = local.instances
-  source   = "../terraform-gcp-virtual-machine"
+  source   = "../terraform-virtual-machine"
 
   project             = var.project
   vm_zone             = each.value.zone

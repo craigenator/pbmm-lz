@@ -57,14 +57,14 @@ Either add a second upstream or remove the current origin and point to a new rep
 
 ```bash
 cd ${BASEDIR}/gcp-foundations-live-infra
-git remote add personal git@github.com:GovAlta/stephen-gcp-foundations-live-infra.git
+git remote add personal git@github.com:GovAlta/stephen-foundations-live-infra.git
 git push -u personal main
 ```
 **OR**
 ```bash
 cd ${BASEDIR}/gcp-foundations-live-infra
 git remote rm origin
-git remote add origin git@github.com:GovAlta/stephen-gcp-foundations-live-infra.git
+git remote add origin git@github.com:GovAlta/stephen-foundations-live-infra.git
 git push -u origin main
 ```
 Repeat for `gcp-core-infrastructure`
@@ -78,14 +78,14 @@ Create a new repository to hold the code on Github.
 Either add a second upstream or remove the current origin and point to a new repository
 ```bash
 cd ${BASEDIR}/gcp-core-infrastructure
-git remote add personal git@github.com:GovAlta/stephen-gcp-core-infrastructure.git
+git remote add personal git@github.com:GovAlta/stephen-core-infrastructure.git
 git push -u personal main
 ```
 **OR**
 ```bash
 cd ${BASEDIR}/gcp-core-infrastructure
 git remote rm origin
-git remote add origin git@github.com:GovAlta/stephen-gcp-core-infrastructure.git
+git remote add origin git@github.com:GovAlta/stephen-core-infrastructure.git
 git push -u origin main
 ```
 

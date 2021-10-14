@@ -7,7 +7,7 @@
 */
 
 module "route_name" {
-  source = "../../../terraform-gcp-goa-naming//modules/gcp/route"
+  source = "../../../terraform-goa-naming//modules/gcp/route"
 
   user_defined_string = var.route_name
 }

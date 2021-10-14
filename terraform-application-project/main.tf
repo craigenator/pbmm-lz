@@ -58,7 +58,7 @@ module "network" {
  *****************************************/
 module "firewall" {
   depends_on                              = [module.network]
-  source                                  = "../terraform-gcp-firewall"  
+  source                                  = "../terraform-firewall"  
   project_id                              = module.project.project_id
   network                                 = module.network.appvpc.network_name
   custom_rules                            = var.custom_rules

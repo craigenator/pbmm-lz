@@ -10,7 +10,7 @@ resource "random_id" "random_id" {
   byte_length = 2
 }
 module "custom_role_names" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/custom_role"
+  source = "../terraform-goa-naming//modules/gcp/custom_role"
 
   for_each        = local.platform_roles
   department_code = var.department_code

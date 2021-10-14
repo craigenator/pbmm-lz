@@ -7,7 +7,7 @@
 */
 
 module "ha_vpn_name" {
-  source = "../../../terraform-gcp-goa-naming//modules/gcp/ha_vpn_name"
+  source = "../../../terraform-goa-naming//modules/gcp/ha_vpn_name"
 
   department_code = var.department_code
   environment     = var.environment
@@ -17,7 +17,7 @@ module "ha_vpn_name" {
 }
 
 module "ext_vpn_name" {
-  source = "../../../terraform-gcp-goa-naming//modules/gcp/external_vpn_name"
+  source = "../../../terraform-goa-naming//modules/gcp/external_vpn_name"
 
   department_code     = var.department_code
   environment         = var.environment
@@ -27,7 +27,7 @@ module "ext_vpn_name" {
 
 module "vpn_tunnel_name" {
   for_each        = { for peer in var.peer_external_gateway.interfaces : peer.id => peer }
-  source          = "../../../terraform-gcp-goa-naming//modules/gcp/vpn_tunnel_name"
+  source          = "../../../terraform-goa-naming//modules/gcp/vpn_tunnel_name"
 
   department_code = var.department_code
   environment     = var.environment

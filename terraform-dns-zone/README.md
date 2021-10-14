@@ -1,4 +1,4 @@
-# terraform-gcp-dns-zone
+# terraform-dns-zone
 Terraform module to createa and manage DNS zones in GCP
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

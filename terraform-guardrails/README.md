@@ -1,4 +1,4 @@
-# terraform-gcp-guardrails
+# terraform-guardrails
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 

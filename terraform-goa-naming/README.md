@@ -18,7 +18,7 @@ locals {
 
 # folders
 module "folder_name" {
-  source        = "../terraform-gcp-goa-naming//modules/gcp/google_folder
+  source        = "../terraform-goa-naming//modules/gcp/google_folder
   goa_governance = local.goa_governance
   owner         = var.owner
   project       = var.project

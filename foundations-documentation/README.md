@@ -102,7 +102,7 @@ backend state files. A typical `terragrunt.hcl` file may look like this.
     }
 
     terraform {
-        source = "git@github.com:GovAlta/terraform-gcp-firewall.git"
+        source = "git@github.com:GovAlta/terraform-firewall.git"
     }
 
     inputs = {
@@ -364,7 +364,7 @@ Resources created as part of this project
 5. Log reader role
 
 ## Organization Custom Roles
-As part of the terraform-gcp-org-custom-roles project, in addition to the default GCP roles, multiple GCP custom roles have been created 
+As part of the terraform-org-custom-roles project, in addition to the default GCP roles, multiple GCP custom roles have been created 
 with varying sets of permissions assigned.
 These roles can be assigned to varying principals (Users, Groups or Service Accounts) at the Organization, Folder or Project level.
 The roles are assigned based on what privileges corresponding principals need  at that level.

@@ -11,7 +11,7 @@ resource "random_id" "random_id" {
 }
 
 module "project_1" {
-  source          = "../terraform-gcp-project"
+  source          = "../terraform-project"
   billing_account = var.billing_account
   name            = "unittest-project-1-${random_id.random_id.hex}"
   parent          = var.parent
@@ -20,7 +20,7 @@ module "project_1" {
 
 
 module "project_2" {
-  source          = "../terraform-gcp-project"
+  source          = "../terraform-project"
   billing_account = var.billing_account
   name            = "unittest-project-2-${random_id.random_id.hex}"
   parent          = var.parent

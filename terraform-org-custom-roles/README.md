@@ -29,7 +29,7 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_custom_role_names"></a> [custom\_role\_names](#module\_custom\_role\_names) | ../terraform-gcp-goa-naming//modules/gcp/custom_role | 2.2.0 |
+| <a name="module_custom_role_names"></a> [custom\_role\_names](#module\_custom\_role\_names) | ../terraform-goa-naming//modules/gcp/custom_role | 2.2.0 |
 
 ## Resources
 

@@ -7,7 +7,7 @@
 */
 
 module "subnet_name" {
-  source = "../../../terraform-gcp-goa-naming//modules/gcp/subnet"
+  source = "../../../terraform-goa-naming//modules/gcp/subnet"
 
   department_code = var.department_code
   environment     = var.environment

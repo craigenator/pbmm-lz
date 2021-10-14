@@ -7,7 +7,7 @@
 */
 
 module "router_name" {
-  source = "../../../terraform-gcp-goa-naming//modules/gcp/router"
+  source = "../../../terraform-goa-naming//modules/gcp/router"
 
   department_code = var.department_code
   environment     = var.environment

@@ -7,7 +7,7 @@
 */
 
 module "project_name" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/project"
+  source = "../terraform-goa-naming//modules/gcp/project"
 
   department_code                = var.department_code
   environment                    = var.environment
@@ -18,7 +18,7 @@ module "project_name" {
 }
 
 module "state_bucket_names" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/storage"
+  source = "../terraform-goa-naming//modules/gcp/storage"
 
   for_each        = var.tfstate_buckets
   department_code = var.department_code
@@ -29,7 +29,7 @@ module "state_bucket_names" {
 }
 
 module "yaml_config_bucket_name" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/storage"
+  source = "../terraform-goa-naming//modules/gcp/storage"
 
   department_code = var.department_code
   environment     = var.environment

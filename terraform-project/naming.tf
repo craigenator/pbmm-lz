@@ -7,7 +7,7 @@
 */
 
 module "project_name" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/project"
+  source = "../terraform-goa-naming//modules/gcp/project"
 
   department_code                = var.department_code
   environment                    = var.environment

@@ -26,13 +26,13 @@ No requirements.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_allow_admins_name"></a> [allow\_admins\_name](#module\_allow\_admins\_name) | ../terraform-gcp-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
-| <a name="module_allow_internal_name"></a> [allow\_internal\_name](#module\_allow\_internal\_name) | ../terraform-gcp-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
-| <a name="module_allow_zone_internal_ingress_name"></a> [allow\_zone\_internal\_ingress\_name](#module\_allow\_zone\_internal\_ingress\_name) | ../terraform-gcp-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
-| <a name="module_bastion_rule_name"></a> [bastion\_rule\_name](#module\_bastion\_rule\_name) | ../terraform-gcp-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
-| <a name="module_custom_rules_names"></a> [custom\_rules\_names](#module\_custom\_rules\_names) | ../terraform-gcp-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
-| <a name="module_deny_all_egress_name"></a> [deny\_all\_egress\_name](#module\_deny\_all\_egress\_name) | ../terraform-gcp-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
-| <a name="module_iap_rules_names"></a> [iap\_rules\_names](#module\_iap\_rules\_names) | ../terraform-gcp-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
+| <a name="module_allow_admins_name"></a> [allow\_admins\_name](#module\_allow\_admins\_name) | ../terraform-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
+| <a name="module_allow_internal_name"></a> [allow\_internal\_name](#module\_allow\_internal\_name) | ../terraform-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
+| <a name="module_allow_zone_internal_ingress_name"></a> [allow\_zone\_internal\_ingress\_name](#module\_allow\_zone\_internal\_ingress\_name) | ../terraform-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
+| <a name="module_bastion_rule_name"></a> [bastion\_rule\_name](#module\_bastion\_rule\_name) | ../terraform-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
+| <a name="module_custom_rules_names"></a> [custom\_rules\_names](#module\_custom\_rules\_names) | ../terraform-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
+| <a name="module_deny_all_egress_name"></a> [deny\_all\_egress\_name](#module\_deny\_all\_egress\_name) | ../terraform-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
+| <a name="module_iap_rules_names"></a> [iap\_rules\_names](#module\_iap\_rules\_names) | ../terraform-gc-naming//modules/gcp/firewall_rule | 1.0.0 |
 
 ## Resources
 

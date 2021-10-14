@@ -7,7 +7,7 @@
 */
 
 module "policy_name" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/vpc_svc_ctl"
+  source = "../terraform-goa-naming//modules/gcp/vpc_svc_ctl"
 
   department_code     = var.department_code
   environment         = var.environment
@@ -16,7 +16,7 @@ module "policy_name" {
 }
 
 module "access_list_names" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/vpc_svc_ctl"
+  source = "../terraform-goa-naming//modules/gcp/vpc_svc_ctl"
 
   for_each        = var.access_level
   department_code = var.department_code
@@ -27,7 +27,7 @@ module "access_list_names" {
 }
 
 module "regular_service_perimeter_names" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/vpc_svc_ctl"
+  source = "../terraform-goa-naming//modules/gcp/vpc_svc_ctl"
 
   for_each        = var.regular_service_perimeter
   department_code = var.department_code
@@ -38,7 +38,7 @@ module "regular_service_perimeter_names" {
 }
 
 module "bridge_service_perimeter_names" {
-  source = "../terraform-gcp-goa-naming//modules/gcp/vpc_svc_ctl"
+  source = "../terraform-goa-naming//modules/gcp/vpc_svc_ctl"
 
   for_each        = var.bridge_service_perimeter
   department_code = var.department_code
