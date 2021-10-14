@@ -157,36 +157,88 @@ Below is a current snapshot of the directory tree:
 ├── config
 │   ├── README.md
 │   ├── bootstrap.hcl
-│   ├── nonp-non-sced-firewall.yaml
-│   ├── nonp-non-sced-network.yaml
-│   └── organization-config.yaml
+|   ├── core-iam.yaml
+|   ├── dnszone-nonp-peer.yaml
+|   ├── dnszone-nonp-private.yaml
+|   ├── dnszone-onprem-forward.yaml
+|   ├── dnszone-prod-peer.yaml
+|   ├── dnszone-prod-private.yaml
+|   ├── fortigate-firewall.yaml
+|   ├── nonp-firewall.yaml
+|   ├── nonp-network.yaml
+|   ├── nonp-vpc-svc-ctl.yaml
+|   ├── organization-config.yaml
+|   ├── perimeter-network.yaml
+|   └── prod-public-perimeter-firewall.yaml
 ├── core-infrastructure
 │   ├── bootstrap
 │   │   ├── empty.hcl
 │   │   └── terragrunt.hcl
 │   ├── common
+│   │   ├── access-context-manager
+│   │   │   └── terragrunt.hcl
 │   │   ├── core-audit-bunker
 │   │   │   └── terragrunt.hcl
 │   │   ├── core-folders
+│   │   │   └── terragrunt.hcl
+│   │   ├── core-guardrails
+│   │   │   └── terragrunt.hcl
+│   │   ├── core-iam
+│   │   │   └── terragrunt.hcl
+│   │   ├── core-org-custom-roles
 │   │   │   └── terragrunt.hcl
 │   │   ├── core-org-policy
 │   │   │   └── terragrunt.hcl
 │   │   └── terragrunt.hcl
 │   ├── nonp
-│   │   ├── non-sced-net-firewall
+│   │   ├── dnszone-forward
 │   │   │   └── terragrunt.hcl
-│   │   ├── non-sced-net-host-prj
+│   │   ├── dnszone-peer
 │   │   │   └── terragrunt.hcl
-│   │   └── terragrunt.hcl
-│   ├── prod
+│   │   ├── dnszone-private
+│   │   │   └── terragrunt.hcl
+│   │   ├── net-firewall
+│   │   │   └── terragrunt.hcl
 │   │   ├── net-host-prj
 │   │   │   └── terragrunt.hcl
-│   │   └── terragrunt.hcl
+│   │   ├── terragrunt.hcl
+│   │   └── vpc-svc-ctl
+│   │       └── terragrunt.hcl
+│   ├── prod
+│   │   ├── dnszone-forward
+│   │   │   └── terragrunt.hcl
+│   │   ├── dnszone-peer
+│   │   │   └── terragrunt.hcl
+│   │   ├── dnszone-private
+│   │   │   └── terragrunt.hcl
+│   │   ├── net-firewall
+│   │   │   └── terragrunt.hcl
+│   │   ├── net-fortigate-firewall
+│   │   │   └── terragrunt.hcl
+│   │   ├── net-host-prj
+│   │   │   └── terragrunt.hcl
+│   │   ├── net-perimeter
+│   │   │   ├── net-ha-perimeter
+│   │   │   │   └── terragrunt.hcl
+│   │   │   ├── net-mgmt-perimeter
+│   │   │   │   └── terragrunt.hcl
+│   │   │   ├── net-perimeter-prj
+│   │   │   │   └── terragrunt.hcl
+│   │   │   ├── net-private-perimeter
+│   │   │   │   └── terragrunt.hcl
+│   │   │   ├── net-private-perimeter-firewall
+│   │   │   │   └── terragrunt.hcl
+│   │   │   ├── net-public-perimeter-firewall
+│   │   │   │   └── terragrunt.hcl
+│   │   │   └── terragrunt.hcl
+│   │   ├── terragrunt.hcl
+│   │   └── vpc-svc-ctl
+│   │       └── terragrunt.hcl
 │   └── scripts
 │       ├── bootstrap.sh
 │       └── desktop_setup.sh
-├── documentation
-│   └── README.md
+├── known_hosts.bitbucket
+├── known_hosts.github
 └── modupdate.sh
 ```
 
