@@ -1,4 +1,4 @@
-module terraform-gcp-fortigate-appliance-ha
+module terraform-fortigate-appliance-ha
 
 go 1.16
 

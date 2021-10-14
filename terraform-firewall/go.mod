@@ -1,4 +1,4 @@
-module terraform-gcp-firewall
+module terraform-firewall
 
 go 1.16
 

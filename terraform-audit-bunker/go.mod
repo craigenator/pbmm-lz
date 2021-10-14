@@ -1,4 +1,4 @@
-module terraform-gcp-audit-bunker
+module terraform-audit-bunker
 
 go 1.15
 

@@ -1,4 +1,4 @@
-module terraform-gcp-virtual-machine
+module terraform-virtual-machine
 
 go 1.16
 

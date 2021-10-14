@@ -1,4 +1,4 @@
-module terraform-gcp-network-host-project
+module terraform-network-host-project
 
 go 1.16
 

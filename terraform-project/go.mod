@@ -1,4 +1,4 @@
-module terraform-gcp-project
+module terraform-project
 
 go 1.16
 

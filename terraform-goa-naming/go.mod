@@ -1,4 +1,4 @@
-module terraform-gcp-goa-naming
+module terraform-goa-naming
 
 go 1.16
 

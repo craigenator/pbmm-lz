@@ -1,4 +1,4 @@
-module terraform-gcp-org-custom-roles
+module terraform-org-custom-roles
 
 go 1.16
 

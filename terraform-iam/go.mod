@@ -1,4 +1,4 @@
-module terraform-gcp-iam
+module terraform-iam
 
 go 1.16
 

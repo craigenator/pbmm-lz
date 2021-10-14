@@ -1,4 +1,4 @@
-module terraform-gcp-vpc-service-controls
+module terraform-vpc-service-controls
 
 go 1.16
 
