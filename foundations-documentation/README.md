@@ -351,6 +351,11 @@ A Guard Rails project creates the preliminary baseline set of controls within th
 GCP guard rails are created using rego based policies in this project.
 
 For e.g. Enabling uniform bucket level access on all GCS storage buckets.
+The Guard Rails are implemented using the following setps.
+
+![image](https://user-images.githubusercontent.com/88559665/137402860-2a001576-511e-4a36-902c-62e2f1827755.png)
+
+For the list of Guard rails implemented, refer the Rego list in https://github.com/canada-ca/cloud-guardrails-gcp/README.md
 
 ## Organization Policy Constraints
 As part of the GCP landing zone, GCP organization policy constraints will be
